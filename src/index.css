@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", sans-serif;
+  --font-display: "Sora", "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-gold-50: #fffef0;
+  --color-gold-100: #fef8cd;
+  --color-gold-200: #fdf098;
+  --color-gold-300: #fae05b;
+  --color-gold-400: #f7cb2a;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b48c25;
+  --color-gold-700: #8f6a1c;
+  --color-gold-800: #6a4d16;
+  --color-gold-900: #4a3411;
+
+  --color-walnut-50: #fbf9f6;
+  --color-walnut-100: #ebdcd3;
+  --color-walnut-200: #d4b6a2;
+  --color-walnut-300: #be9071;
+  --color-walnut-400: #a77048;
+  --color-walnut-500: #8c542d;
+  --color-walnut-600: #704121;
+  --color-walnut-700: #552f18;
+  --color-walnut-800: #3d2010;
+  --color-walnut-900: #241208;
+  --color-walnut-950: #0f0703;
+
+  --color-jet: #080808;
+  --color-rich-black: #0c0d0e;
+}
+
+/* Custom Premium Utilities */
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #FFE89C 0%, #D4AF37 50%, #9F7915 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #FFE89C 0%, #D4AF37 50%, #9F7915 100%);
+  }
+
+  .bg-walnut-gradient {
+    background: linear-gradient(135deg, #3d2010 0%, #170d06 100%);
+  }
+
+  .border-gold-glow {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+
+  .glass-panel {
+    background: rgba(12, 13, 14, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  .glass-panel-heavy {
+    background: rgba(8, 8, 8, 0.9);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+  }
+
+  .metallic-shine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 45%,
+      rgba(255, 255, 255, 0.1) 48%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.1) 52%,
+      transparent 55%
+    );
+    transform: rotate(45deg);
+    transition: transform 0.5s ease;
+  }
+
+  .metallic-shine:hover::after {
+    transform: translate(25%, 25%) rotate(45deg);
+  }
+}
+
+/* Base style resets */
+body {
+  background-color: #080808;
+  color: #f7f4f0;
+  font-family: "Outfit", "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for Luxury Aesthetic */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d2010;
+  border: 2px solid #080808;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Dynamic glow animation background */
+@keyframes ambientGlow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+    opacity: 0.5;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+    opacity: 0.4;
+  }
+}
+
+.animate-ambient-slow-1 {
+  animation: ambientGlow 15s infinite ease-in-out;
+}
+
+.animate-ambient-slow-2 {
+  animation: ambientGlow 20s infinite ease-in-out 3s reverse;
+}
+
+/* Grid & Dots backgrounds */
+.bg-premium-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+}
+
+.bg-premium-dots {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(212, 175, 55, 0.06) 1px, transparent 1px);
+}
+
+/* Wooden Grain Effect Layer */
+.wood-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #000 0px,
+    #000 2px,
+    transparent 2px,
+    transparent 10px
+  );
+}
+
+/* Soft gold ambient light */
+.gold-light-radial {
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+}
+
+.walnut-light-radial {
+  background: radial-gradient(circle, rgba(140, 84, 45, 0.15) 0%, transparent 70%);
+}
+

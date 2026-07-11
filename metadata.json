@@ -1,0 +1,6 @@
+{
+  "name": "Atomic Trade Classes",
+  "description": "Premium luxury trading academy offering world-class market education, live trading sessions, and lifetime mentorship for aspiring traders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
